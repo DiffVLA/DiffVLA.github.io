@@ -1,12 +1,12 @@
 theme: default # default || classic || dark
 organization: Bosch CR
 twitter: '@peterjaq'
-title: 'SparseMeXt: Unlocking the Potential of Sparse Representations for HD Map Construction'
-journal: "IROS'25 under review"
+title: 'DiffVLA: Vision-Language Guided Diffusion Planning for Autonomous Driving'
+journal: "2nd Place Autonomous Grand Challenge 2025"
 resources:
-  paper: https://arxiv.org/html/2505.08808v1
-  arxiv: https://arxiv.org/html/2505.08808v1
-  code: https://github.com/SparseMeXT
+  paper: https://arxiv.org/abs/2505.19381
+  arxiv: https://arxiv.org/abs/2505.19381
+  code: https://github.com/DiffVLA
   # video: https://www.youtube.com/embed/onbnb_D1wC8?si=xJczUv716Lt5aO4l&amp;start=1150
   # demo: https://colab.research.google.com/
   # huggingface: https://huggingface.co/
@@ -17,90 +17,92 @@ url: https://denkiwakame.github.io/academic-project-template
 speakerdeck: # speakerdeck slide ID
 authors:
   - name: Anqing Jiang
-    affiliation: [1, 2]
+    affiliation: [1]
     url: https://github.com/PeterJaq
     position: Researcher
-  - name: Jinhao Chai*
-    affiliation: [1, 2]
-    position: intern
-    # url: https://thispersondoesnotexist.com/
   - name: Yu Gao
     affiliation: [1]
     position: Researcher
-    # url: https://thispersondoesnotexist.com/
+    # url: https://thispersondoesnotexist.com/    
+  - name: Zhigang Sun
+    affiliation: [1]
+    position: Researcher
   - name: Yiru Wang
     affiliation: [1]
     position: Researcher
+  - name: Jijun Wang*
+    affiliation: [1,2]
+    position: Researcher
+  - name: Jinhao Chai*
+    affiliation: [1,4]
+    position: intern
+  - name: Qian Cao*
+    affiliation: [1,3]
+    position: intern
   - name: Yuwen Heng
     affiliation: [1]
     position: Researcher
-  - name: Zhigang Sun
-    affiliation: [1]
+  - name: Hao Jiang*
+    affiliation: [1,5]
+    position: intern
+  - name: Yunda Dong*
+    affiliation: [1,5]
+    position: intern    
+  - name: ZongZheng Zhang
+    affiliation: [2]
+    position: Researcher
+  - name: Xianda Guo
+    affiliation: [2]
     position: Researcher
   - name: Hao Sun
     affiliation: [1]
     position: Researcher
-  - name: Zezhong Zhao
-    affiliation: [2]
-    position: Researcher
-  - name: Li Sun
-    affiliation: [2]
-    position: Researcher
-  - name: Jian Zhou
-    affiliation: [2]
-    position: Researcher
-  - name: Lijuan Zhu
-    affiliation: [1]
-    position: Researcher
   - name: Hao Zhao
-    affiliation: [3]
+    affiliation: [2]
     position: Researcher
-  - name: Shugong Xu
-    affiliation: [4]
-    position: Researcher
+
 
 affiliations:
   - Bosch Corporate Research
-  - Shanghai University
-  - Bosch Mobility Solutions
   - AIR, Tsinghua University
-  - Xi’an Jiaotong-Liverpool University
+  - Southeast University
+  - Shanghai University
+  - Shanghai Jiao Tong University
 
 meta:
   - '*work done while he was interning at Bosch Corporate Research'
 
 bibtex: >
-  @article{jiang2025sparsemext,
-    title   = {SparseMeXT Unlocking the Potential of Sparse Representations for HD Map Construction},
-    author  = {Jiang, Anqing and Chai, Jinhao and Gao, Yu and Wang, Yiru and Heng, Yuwen and Sun, Zhigang and Sun, Hao and Zhao, Zezhong and Sun, Li and Zhou, Jian and others},
-    journal = {arXiv preprint arXiv:2505.08808},
-    year    = {2025}
+  @misc{jiang2025diffvlavisionlanguageguideddiffusion,
+        title={DiffVLA: Vision-Language Guided Diffusion Planning for Autonomous Driving}, 
+        author={Anqing Jiang and Yu Gao and Zhigang Sun and Yiru Wang and Jijun Wang and Jinghao Chai and Qian Cao and Yuweng Heng and Hao Jiang and Zongzheng Zhang and Xianda Guo and Hao Sun and Hao Zhao},
+        year={2025},
+        eprint={2505.19381},
+        archivePrefix={arXiv},
+        primaryClass={cs.AI},
+        url={https://arxiv.org/abs/2505.19381}, 
   }
 
-teaser: overall_framework.jpg
+teaser: 01_framework_overview.jpg
 abstract: |
-  Recent advancements in high-definition (HD) map construction have demonstrated the effectiveness of dense representations, which heavily rely on computationally intensive bird’s-eye view (BEV) features. 
-  While sparse representations offer a more efficient alternative by avoiding dense BEV processing, existing methods often lag behind due to the lack of tailored designs. 
-  These limitations have hindered the competitiveness of sparse representations in online HD map construction. In this work, we systematically revisit and enhance sparse representation techniques, identifying key architectural and algorithmic improvements that bridge the gap with—and ultimately surpass—dense approaches. 
-  We introduce a dedicated network architecture optimized for sparse map feature extraction, a sparse-dense segmentation auxiliary task to better leverage geometric and semantic cues, and a denoising module guided by physical priors to refine predictions. Through these enhancements, our method achieves state-of-the-art performance on the nuScenes dataset, significantly advancing HD map construction and centerline detection. 
-  Specifically, SparseMeXt-Tiny reaches a mean average precision (mAP) of 55.5% at 32 frames per second (fps), while SparseMeXt-Base attains 65.2% mAP. Scaling the backbone and decoder further, SparseMeXt-Large achieves an mAP of 68.9% at over 20 fps, establishing a new benchmark for sparse representations in HD map construction. 
-  These results underscore the untapped potential of sparse methods, challenging the conventional reliance on dense representations and redefining efficiency-performance trade-offs in the field.
+  Research interest in end-to-end autonomous driving has surged owing to its fully differentiable design integrating modular tasks, i.e. perception, prediction and planing, which enables optimization in pursuit of the ultimate goal. Despite the great potential of the end-to-end paradigm, existing methods suffer from several aspects including expensive BEV (bird’s eye view) computation, action diversity, and sub-optimal decision in complex real-world scenarios. To address these challenges, we propose a novel hybrid sparse-dense diffusion policy, empowered by a Vision-Language Model (VLM), called Diff-VLA. We explore the sparse diffusion representation for efficient multi-modal driving behavior. Moreover, we rethink the effectiveness of VLM driving decision and improve the trajectory generation guidance through deep interaction across agent, map instances and VLM output. Our method shows superior performance in Autonomous Grand Challenge 2025 which contains challenging real and reactive synthetic scenarios. Our methods achieves 45.0 PDMS.
 
 body:
   - title: Video
     text: |
-      <div uk-slider>
-        <div class="uk-position-relative uk-visible-toggle uk-light">
-          <div>
-            <video
-              src="submit_video_iros.mp4"
-              loop
-              muted
-              uk-video="autoplay:inview"
-              />
-          </div>
-        </div>
-      </div>
+      TBD
+      # <div uk-slider>
+      #   <div class="uk-position-relative uk-visible-toggle uk-light">
+      #     <div>
+      #       <video
+      #         src="submit_video_iros.mp4"
+      #         loop
+      #         muted
+      #         uk-video="autoplay:inview"
+      #         />
+      #     </div>
+      #   </div>
+      # </div>
 
 projects: # relevant projects
   - title: SparseMeXT
