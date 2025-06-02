@@ -2,7 +2,7 @@ theme: default # default || classic || dark
 organization: Bosch CR
 twitter: '@peterjaq'
 title: 'DiffVLA: Vision-Language Guided Diffusion Planning for Autonomous Driving'
-journal: "2nd Place in Autonomous Grand Challenge 2025"
+journal: "2nd Place in Autonomous Grand E2E AD Challenge 2025"
 resources:
   paper: https://arxiv.org/abs/2505.19381
   arxiv: https://arxiv.org/abs/2505.19381
