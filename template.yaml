@@ -83,7 +83,7 @@ bibtex: >
         url={https://arxiv.org/abs/2505.19381}, 
   }
 
-teaser: 01_framework_overview.jpg
+teaser: 01_framework_overview.png
 abstract: |
   Research interest in end-to-end autonomous driving has surged owing to its fully differentiable design integrating modular tasks, i.e. perception, prediction and planing, which enables optimization in pursuit of the ultimate goal. Despite the great potential of the end-to-end paradigm, existing methods suffer from several aspects including expensive BEV (bird’s eye view) computation, action diversity, and sub-optimal decision in complex real-world scenarios. To address these challenges, we propose a novel hybrid sparse-dense diffusion policy, empowered by a Vision-Language Model (VLM), called Diff-VLA. We explore the sparse diffusion representation for efficient multi-modal driving behavior. Moreover, we rethink the effectiveness of VLM driving decision and improve the trajectory generation guidance through deep interaction across agent, map instances and VLM output. Our method shows superior performance in Autonomous Grand Challenge 2025 which contains challenging real and reactive synthetic scenarios. Our methods achieves 45.0 PDMS.
 
@@ -91,18 +91,6 @@ body:
   - title: Video
     text: |
       TBD
-      # <div uk-slider>
-      #   <div class="uk-position-relative uk-visible-toggle uk-light">
-      #     <div>
-      #       <video
-      #         src="submit_video_iros.mp4"
-      #         loop
-      #         muted
-      #         uk-video="autoplay:inview"
-      #         />
-      #     </div>
-      #   </div>
-      # </div>
 
 projects: # relevant projects
   - title: SparseMeXT
